@@ -1,0 +1,8 @@
+name: build1
+dependencies:
+- python=3.6
+- pip
+- pip:
+  - bonsai-cli
+  - bonsai-gym
+  - bonsai_ai>=2.0.20

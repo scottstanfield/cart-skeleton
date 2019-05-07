@@ -1,0 +1,1 @@
+{"training": {"simulator": "bonsai.ai", "command": "python cartpole_simulator.py"}, "files": ["*.py", "README.md", "cartpole.ink", "requirements.txt"]}
