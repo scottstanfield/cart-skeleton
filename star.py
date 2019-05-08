@@ -17,7 +17,7 @@ def state(model_state):
     return {
         'position': model_state[0],
         'velocity': model_state[1],
-        'angle': model_state[2],
+        'angle':    model_state[2],
         'rotation': model_state[3],
     }
 
@@ -28,8 +28,8 @@ def terminal(model_state):
         terminals (when the model is in a successful state)
     """
     x, x_dot, theta, theta_dot = model_state
-    theta_threshold_radians = 12 * 2 * math.pi / 360
-    x_threshold = 2.4
+    theta_threshold_radians    = 12 * 2 * math.pi / 360
+    x_threshold                = 2.4
 
     # Terminal occurs when the cart's position is too far to the left or right
     # or the cart's pole has tipped too far.
@@ -52,3 +52,7 @@ def reward(model_state, done):
     if not done:
         return 1.0
     return -0.01
+
+
+
+
