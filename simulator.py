@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 This file contains the simulator that controls the cartpole model
 using actions from the Bonsai Platform
@@ -33,16 +35,16 @@ class CartpoleSimulator(bonsai_ai.Simulator):
         """ run a single step of the simulation.
         if the simulation has reached a terminal state, mark it as such.
         """
-        action = star.action(brain_action)
 
+        action = star.action(brain_action)
         self.model.step(action)
 
-        if self.iteration_count >= 200:
+        if self.iteration_count >= 300:
             terminal = True
         else:
             terminal = star.terminal(self.model.state)
 
-        reward = star.reward(self.model.state, terminal)
+        reward      = star.reward(self.model.state, terminal)
         brain_state = star.state(self.model.state)
 
         return (brain_state, reward, terminal)
